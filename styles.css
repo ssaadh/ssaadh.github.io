@@ -1,0 +1,175 @@
+:root {
+  --pico-font-family: Roboto, var(--pico-font-family-sans-serif);
+  --pico-font-family-monospace: "Fira Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--pico-font-family-emoji);
+}
+
+body {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--pico-font-family);
+  font-smooth: always;
+  text-rendering: optimizeLegibility;
+}
+
+article.page {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0;
+  max-width: 1200px;
+  padding: 1rem;
+}
+
+.side-bar ul {
+  padding: 0;
+}
+
+.side-bar li {
+  list-style-type: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 1rem;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+  text-align: center;
+}
+
+h1 {
+  padding-top: 1rem;
+}
+
+h1,
+h2,
+h4,
+h5 {
+  font-family: var(--pico-font-family);
+}
+
+h3,
+h6 {
+  font-family: var(--pico-font-family);
+}
+
+#software-engineer {
+  color: var(--pico-primary);
+  font-family: var(--pico-font-family-monospace);
+}
+
+@media print {
+  body {
+    padding: 0;
+  }
+
+  article.page {
+    border: none;
+    max-width: inherit;
+    width: 100%;
+  }
+
+  main {
+    flex-direction: row;
+  }
+
+  .side-bar {
+    padding-right: 1rem;
+    width: 290px;
+  }
+
+  section {
+    padding: 0;
+  }
+
+  .hide-for-print {
+    display: none;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  main {
+    flex-direction: row;
+  }
+
+  .side-bar {
+    padding-right: 2rem;
+    width: 345px;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  body {
+    padding: 2rem 0 5rem;
+  }
+
+  article.page {
+    margin-bottom: var(--pico-block-spacing-vertical);
+  }
+}
+
+@media print {
+  .mobile-only {
+    display: none;
+  }
+}
+
+@media print {
+  .side-bar {
+    width: 200px;
+  }
+
+  a,
+  body,
+  li,
+  p {
+    font-size: smaller;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+}
+
+h3.main-bar {
+  margin-bottom: 5px;
+  /* Reduces space below the h3 */
+}
+
+p.first-line {
+  margin-top: 5px;
+  /* Reduces space above the p */
+}
+
+p.intro-line {
+  margin-top: 5px;
+  margin-bottom: 7.5px;
+  margin-left: -15px;
+  /* Reduces space above the p */
+}
