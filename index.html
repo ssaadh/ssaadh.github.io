@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <title>Saadh Shehzad</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.jade.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="crossorigin" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <meta charset="utf-8">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script defer="defer" data-domain="saadhs.com" src="https://plausible.io/js/script.js"></script>
+
+    <style>
+      :root {
+        --pico-font-family: Roboto, var(--pico-font-family-sans-serif);
+        --pico-font-family-monospace: "Fira Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace, var(--pico-font-family-emoji);
+      }
+
+      body {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        font-family: var(--pico-font-family);
+        font-smooth: always;
+        text-rendering: optimizeLegibility;
+      }
+
+      article.page {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+        max-width: 1200px;
+        padding: 1rem;
+      }
+
+      .side-bar ul {
+        padding: 0;
+      }
+
+      .side-bar li {
+        list-style-type: none;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 1rem;
+      }
+
+      .content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+      }
+
+      header {
+        display: flex;
+        flex-direction: column;
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+        text-align: center;
+      }
+
+      h1 {
+        padding-top: 1rem;
+      }
+
+      h1,
+      h2,
+      h4,
+      h5 {
+        font-family: var(--pico-font-family);
+      }
+
+      h3,
+      h6 {
+        font-family: var(--pico-font-family);
+      }
+
+      #software-engineer {
+        color: var(--pico-primary);
+        font-family: var(--pico-font-family-monospace);
+      }
+
+      @media print {
+        body {
+          padding: 0;
+        }
+
+        article.page {
+          border: none;
+          max-width: inherit;
+          width: 100%;
+        }
+
+        main {
+          flex-direction: row;
+        }
+
+        .side-bar {
+          padding-right: 1rem;
+          width: 290px;
+        }
+
+        section {
+          padding: 0;
+        }
+
+        .hide-for-print {
+          display: none;
+        }
+      }
+
+      /* Extra small devices (phones, 600px and down) */
+      @media only screen and (max-width: 600px) {}
+
+      /* Small devices (portrait tablets and large phones, 600px and up) */
+      @media only screen and (min-width: 600px) {}
+
+      /* Medium devices (landscape tablets, 768px and up) */
+      @media only screen and (min-width: 768px) {
+        .mobile-only {
+          display: none;
+        }
+      }
+
+      /* Large devices (laptops/desktops, 992px and up) */
+      @media only screen and (min-width: 992px) {
+        main {
+          flex-direction: row;
+        }
+
+        .side-bar {
+          padding-right: 2rem;
+          width: 345px;
+        }
+      }
+
+      /* Extra large devices (large laptops and desktops, 1200px and up) */
+      @media only screen and (min-width: 1200px) {
+        body {
+          padding: 2rem 0 5rem;
+        }
+
+        article.page {
+          margin-bottom: var(--pico-block-spacing-vertical);
+        }
+      }
+
+      @media print {
+        .mobile-only {
+          display: none;
+        }
+      }
+
+      @media print {
+        .side-bar {
+          width: 200px;
+        }
+
+        a,
+        body,
+        li,
+        p {
+          font-size: smaller;
+        }
+
+        h3 {
+          font-size: 1.4rem;
+        }
+      }
+
+      h3.main-bar {
+        margin-bottom: 5px;
+        /* Reduces space below the h3 */
+      }
+
+      p.first-line {
+        margin-top: 5px;
+        /* Reduces space above the p */
+      }
+
+      p.intro-line {
+        margin-top: 5px;
+        margin-bottom: 7.5px;
+        margin-left: -15px;
+        /* Reduces space above the p */
+      }
+    </style>
+
+    <script>
+      function handleThemeChange() {
+        const styles = getComputedStyle(document.documentElement);
+        const themeColorMetaTag = document.querySelector("meta[name='theme-color']");
+        const picoPrimary = styles.getPropertyValue("--pico-primary");
+        themeColorMetaTag.setAttribute("content", picoPrimary);
+      }
+
+      function hidePhoneNumber() {
+        // const phoneLi = document.getElementById('phone');
+        // phoneLi.innerHTML = `&#x1F4F2; View in PDF version`;
+      }
+
+      function showPhoneNumber() {
+        const phoneWithDashes = atob("MjAxLTI0MC03MTE1");
+        const phoneWithoutDashes = atob("MjAxMjQwNzExNQ==");
+        const phoneLi = document.getElementById('phone');
+        phoneLi.innerHTML = `&#x1F4F2; <a href="tel:${phoneWithoutDashes}">${phoneWithDashes}</a>`;
+      }
+
+      function showEmail() {
+        const email = atob("c2FhZGhzQHByb3Rvbi5tZQ==");
+        const emailLi = document.getElementById("email");
+        emailLi.innerHTML = `&#x1F4E5;  <a href="mailto:${email}?subject=Job Opportunity">${email}</a>`;
+      }
+
+      window.onload = function onload() {
+        // color scheme
+        const colorSchemeChangeQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        colorSchemeChangeQuery.addListener(handleThemeChange);
+        handleThemeChange(colorSchemeChangeQuery);
+
+        // email
+        showEmail();
+
+        // phone
+        window.addEventListener('beforeprint', showPhoneNumber);
+        window.addEventListener('afterprint', hidePhoneNumber);
+        hidePhoneNumber();
+      }
+    </script>
+  </head>
+
+  <body>
+    <article class="page">
+      <header>
+        <h1>
+          Saadh Shehzad
+        </h1>
+
+        <h2 id="software-engineer">Software Engineer</h2>
+
+        <p>
+          <a class="hide-for-print" href="https://saadhs.com/assets/resume.pdf" target="_blank">Download as PDF</a>
+        </p>
+      </header>
+
+      <main>
+        <div class="side-bar">
+          <hr class="mobile-only"/>
+
+          <section>
+            <h4 class="side-bar">Contact</h4>
+
+            <ul>
+              <li id="phone">
+                
+              </li>
+              <li id="email">
+                &#x1F4E5;
+              </li>
+
+              <li>&#x1F4BB;
+                <a href="https://github.com/ssaadh" target="_blank">github.com/ssaadh</a>
+              </li>
+
+              <li>
+                &#x1F4CD; Princeton, NJ
+              </li>
+            </ul>
+          </section>
+
+          <hr/>
+
+          <section>
+            <h4 class="side-bar">Skills</h4>
+
+            <h6>Programming Languages & Technologies</h6>
+
+            <p>JavaScript, Python, Ruby, PHP, Bash, Linux, Google Cloud, Selenium, Playwright, Puppeteer, Git</p>
+
+            <h6>Frontend</h6>
+
+            <p>React, Next.js, Vite, HTML5, CSS3, Sass, Tailwind CSS</p>
+
+            <h6>Backend</h6>
+
+            <p>Express with Node.JS, Ruby on Rails, Strapi (headless CMS), WebSockets/Socket.io, PostgreSQL, MySQL, Wordpress</p>
+          </section>
+        </div>
+
+        <div class="content">
+          <section>
+            <h2>Projects</h2>
+
+            <div>
+              <ul>
+                <li>
+                  Developing a Linktree alternative with embedded and integrated social media in one. Developed with Typescript, NextJS, Strapi as a headless CMS, TailwindCSS, and Radix UI + Shadcn UI. <a href="https://github.com/ssaadh/crank-social-media-hub">Source on Github</a> with a <a href="https://cranksite.vercel.app">demo on Vercel</a>.
+                </li>
+              </ul>
+
+              <h6 class="main-bar">Founding Community Manager, Zoomers.xyz</h6>
+              <ul>
+                <p class="intro-line">
+                  A 24/7 online co-working community based around a Zoom meeting room.
+                </p>
+
+                <li>
+                  Visual collaborative timers at
+                  <a href="https://timers.zoomers.xyz">https://timers.zoomers.xyz</a>. Developed with NodeJS WebSocket/Socket.io backend, Google Cloud Firestore, and ReactJS. <a href="https://github.com/ssaadh/zoomers-collab-timers">Source on Github</a>.
+                </li>
+                <li>
+                  Zoom Meeting automation. Developed with Javascript Playwright to control headless Chromium browser to manage admin tasks for the meeting room every day. <a href="https://github.com/ssaadh/zoomus-websdk-automation">Source on Github</a>.
+                </li>
+                <li>
+                  Real-time status of people in the meeting room. Created AWS Lambda serverless functions to consume Zoom webhooks and store data in Firestore with a React frontend. <a href="https://github.com/ssaadh/zoom-us-users-real-time-status">Source on Github</a>.
+
+                <li>
+                  Working on: Membership and community site using NextJS with Ghost as headless CMS. <a href="https://github.com/ssaadh/zoomers.xyz">Source on Github</a>.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <hr/>
+
+          <section>
+            <h2>Work Experience</h2>
+
+            <div>
+              <h3 class="main-bar">
+                Software Developer, Freelance Consulting
+              </h3>
+              <p class="first-line">
+                <i>Remote, March 2024 - Present</i>
+              </p>
+              <ul>
+                <li>
+                  Developed a flexible site for a content creator. Developed with Typescript, Tailwind CSS, Radix UI, NextJS, and Wordpress as a headless CMS with a focus on SSG (static site generation).
+                </li>
+                <li>
+                  Worked on porting iMacros code to browser automation code in Javascript Playwright
+                </li>
+                <li>
+                  Automated Javascript Playwright to get specialized financial data and present it to the client with basic reporting and printing capabilites with NextJS
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="main-bar">Full Stack Developer, Ats Media (Contract)</h3>
+              <p class="first-line">
+                <i>Princeton, New Jersey, October 2021 - June 2022</i>
+              </p>
+              <ul>
+                <li>Developed MAS, Mobile Ad Scout, and VAS, Video Ad Scout, for internal clients</li>
+                <li>Created a Ruby on Rails backend and React frontend for MAS. Created an ExpressJS backend and React frontend for VAS</li>
+                <li>Developed a Ruby Watir/Selenium headless browser scraper of popover, popup, and modern native ads for MAS</li>
+                <li>Developed a Javascript Puppeteer browser automation scraper to get Instagram, YouTube, and Facebook video ads as authentic users, across different demographics for VAS</li>
+              </ul>
+              <ul>
+                <p class="intro-line">
+                  Ats Media was an online marketing and adtech company
+                </p>
+                <li>Documented React, GraphQL, and React-Redux internal web app code</li>
+                <li>Upgraded older React and Create-React-App codebases to Typescript, NextJS, and moved to server side rendering</li>
+                <li>Converted outdated bulky React state management to React hooks</li>
+                <li>Ported PHP web frameworks, CodeIgniter and Laravel, code bases to Node/ExpressJS and React</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="main-bar">Software Developer, Freelance Consulting</h3>
+              <p class="first-line">
+                <i>Remote, November 2018 - September 2021</i>
+              </p>
+              <ul>
+                <li>Managed an array of Wordpress sites. Created custom Wordpress themes and plugins as needed by clients.</li>
+                <li>Worked alongside a marketing partner managing WooCommerce with Wordpress and Shopify e-commerce stores</li>
+                <li>Created and maintained wrapper libraries for the defunct iMacros web automation language in PHP, Ruby, and Javascript for clients</li>
+                <li>Created and maintained scrapers with Watir in Ruby and Selenium in Python</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="main-bar">Programmer &amp; IT, Ats Media</h3>
+              <p class="first-line">
+                <i>Remote, March 2018 - September 2021</i>
+              </p>
+              <ul>
+                <p class="intro-line">
+                  Ats Media was an online marketing and adtech company
+                </p>
+                <li>System administrator for in-house and client Linux and Windows servers</li>
+                <li>Worked day-to-day with marketers on landing pages and Wordpress content focused sites
+                </li>
+                <li>Created and maintained in-house and client scripts and Wordpress sites</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </main>
+    </article>
+  </body>
+
+</html>
